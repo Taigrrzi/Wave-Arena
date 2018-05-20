@@ -35,4 +35,5 @@ sysinfo.txt
 
 # Rider files
 /.idea/
-Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll
+/Assets/Plugins/
+Assets/Plugins.meta
