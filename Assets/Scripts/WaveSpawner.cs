@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour {
 
-	// Use this for initialization
+	// Use this for initialization 
 	void Start () {
 		
 	}
