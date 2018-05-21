@@ -2,13 +2,13 @@
 
 namespace FiringModes
 {
-    public class FMSingleShot : MonoBehaviour, IFiringMode
+    public class FMAutomatic : MonoBehaviour, IFiringMode
     {
         private Weapon weapon;
         private float shotDelay;
         private float lastShot;
 
-        public FMSingleShot FMSingleShotInit(Weapon weapon, float shotDelay)
+        public FMAutomatic FMAutomaticInit(Weapon weapon, float shotDelay)
         {
             this.weapon = weapon;
             this.shotDelay = shotDelay;
@@ -18,14 +18,18 @@ namespace FiringModes
         
         public void FirePressed()
         {
+            
+        }
+
+        public void FireDown()
+        {
             if (Time.time - shotDelay > lastShot)
             {    
                 weapon.Shoot();
                 lastShot = Time.time;
             }
         }
-
-        public void FireDown(){}
+        
         public void FireReleased(){}
         
     }

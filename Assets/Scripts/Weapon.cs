@@ -38,7 +38,8 @@ public class Weapon : MonoBehaviour
 
 	void Start()
 	{
-		firingMode = new SingleShot(this, 0.2f);
+		firingMode = gameObject.AddComponent<FMSingleShot>().FMSingleShotInit(this,1f);
+		
 	}
 
 	void Update()
@@ -46,6 +47,14 @@ public class Weapon : MonoBehaviour
 		if (Input.GetMouseButtonDown((int) MouseButton.LeftMouse))
 		{
 			WeaponPressed();
+		}
+		if (Input.GetMouseButton((int) MouseButton.LeftMouse))
+		{
+			WeaponDown();
+		}
+		if (Input.GetMouseButtonUp((int) MouseButton.LeftMouse))
+		{
+			WeaponReleased();
 		}
 	}
 }
