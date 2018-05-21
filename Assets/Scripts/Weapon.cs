@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
 	private int currentAmmo;
 	private int maxAmmo;
 
-	private bool usable, inuse, unusable;
+	private float multiplier;
 
 	private Ammunition ammoType;
 	private IFiringMode firingMode;
@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
 
 	void Start()
 	{
-		firingMode = gameObject.AddComponent<FMSingleShot>().FMSingleShotInit(this,1f);
+		firingMode = gameObject.AddComponent<FMCharge>().FMChargeInit(this, 1f, false, false);
 		
 	}
 
